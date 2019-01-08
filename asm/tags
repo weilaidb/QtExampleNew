@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR	makefile	/^AR = $(COMPILE_PEFIX)ar rcs$/;"	m
+CC	makefile	/^CC = $(COMPILE_PEFIX)gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS = -w -fPIC -g -x c -pipe $(EXTRA_OPTS) $(OPT_CFLAGS) -pipe -O0 -g -Wall -W -D_REENTRANT $(DEFINES)#-EL $/;"	m
+CHK_DIR_EXISTS	makefile	/^CHK_DIR_EXISTS= test -d$/;"	m
+COMPILE_DIR	makefile	/^COMPILE_DIR = $(shell pwd)$/;"	m
+COMPILE_PEFIX	makefile	/^COMPILE_PEFIX = #mips-linux-gnu-$/;"	m
+COMPRESS	makefile	/^COMPRESS = gzip -9f$/;"	m
+COPY	makefile	/^COPY = cp -f$/;"	m
+COPY_DIR	makefile	/^COPY_DIR = $(COPY) -r$/;"	m
+COPY_FILE	makefile	/^COPY_FILE = $(COPY)$/;"	m
+CPPOBJ	makefile	/^CPPOBJ  = $(CPPSRC:%.cpp=$(TMPOBJPATH)\/%.o)$/;"	m
+CPPSRC	makefile	/^CPPSRC  = $(shell find $(SUBDIR) -name '*.cpp') $/;"	m
+CXX	makefile	/^CXX = $(COMPILE_PEFIX)g++$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS = -w -fPIC -g -pipe $(EXTRA_OPTS) $(OPT_CFLAGS) -pipe -O0 -g -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+DEFINES	makefile	/^DEFINES = #-D_FILE_OFFSET_BITS=64 $/;"	m
+DEL_DIR	makefile	/^DEL_DIR = rmdir$/;"	m
+DEL_FILE	makefile	/^DEL_FILE = rm -f$/;"	m
+EXECDIR	makefile	/^EXECDIR = ..\/exelibtest$/;"	m
+INCPATH	makefile	/^INCPATH	 = $(LOCAL_INC)$/;"	m
+INSTALL_DIR	makefile	/^INSTALL_DIR = $(COPY_DIR)$/;"	m
+INSTALL_FILE	makefile	/^INSTALL_FILE = install -m 644 -p$/;"	m
+INSTALL_PROGRAM	makefile	/^INSTALL_PROGRAM = install -m 755 -p$/;"	m
+LFLAGS	makefile	/^LFLAGS = #-EL #-Wl,-O1$/;"	m
+LIBS	makefile	/^LIBS = $(LOCAL_LIBS) $(RPATH_LINK) $/;"	m
+LIBSHAREDTARGET	makefile	/^LIBSHAREDTARGET =$/;"	m
+LIBTARGET	makefile	/^LIBTARGET       = $/;"	m
+LINK	makefile	/^LINK = $(COMPILE_PEFIX)g++$/;"	m
+LOCAL_INC	makefile	/^LOCAL_INC       = $(SRC_INC) -Iinclude -Iinclude\/freetype $/;"	m
+LOCAL_LIBDIR	makefile	/^LOCAL_LIBDIR    = #lib$/;"	m
+LOCAL_LIBS	makefile	/^LOCAL_LIBS      = -lpthread -lzmq #-Llib #-lporting$/;"	m
+MKDIR	makefile	/^MKDIR = mkdir -p$/;"	m
+MOVE	makefile	/^MOVE = mv -f$/;"	m
+OBJ	makefile	/^OBJ     = $(SRC:%.c=$(TMPOBJPATH)\/%.o)$/;"	m
+RPATH_LINK	makefile	/^RPATH_LINK = $/;"	m
+SED	makefile	/^SED = sed$/;"	m
+SRC	makefile	/^SRC     = $(shell find $(SUBDIR) -name '*.c')$/;"	m
+SUBDIR	makefile	/^SUBDIR = .$/;"	m
+SYMLINK	makefile	/^SYMLINK = ln -sf$/;"	m
+TAR	makefile	/^TAR = tar -cf$/;"	m
+TARGET	makefile	/^TARGET  = $(shell basename $(COMPILE_DIR))$/;"	m
+TMPOBJPATH	makefile	/^TMPOBJPATH      = .\/tmp$/;"	m
+main	main.c	/^int main(int argc, char **argv)$/;"	f
+test_asm	main.c	/^void test_asm()$/;"	f
