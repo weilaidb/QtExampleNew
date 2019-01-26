@@ -1,8 +1,8 @@
 %{
 #undef input
 #undef unput
-int input(void);
-void unput(int ch);
+// int input(void);
+// void unput(int ch);
 unsigned verbose;
 char *progName;
 %}
@@ -31,34 +31,34 @@ main(int argc, char **argv)
 
 static unsigned offset = 0;
 
-int
-input(void)
-{
-	char c;
+// int
+// input(void)
+// {
+	// char c;
 
-	if (targv >= arglim)
-		return(0);	/* EOF */
-	/* end of argument, move to the next */
-	if ((c = targv[0][offset++]) != '\0')
-		return(c);
-	targv++;
-	offset = 0;
-	return(' ');
-}
+	// if (targv >= arglim)
+		// return(0);	/* EOF */
+	// /* end of argument, move to the next */
+	// if ((c = targv[0][offset++]) != '\0')
+		// return(c);
+	// targv++;
+	// offset = 0;
+	// return(' ');
+// }
 
-/* simple unput only backs up, doesn't allow you to */
-/* put back different text */
-void
-unput(int ch)
-{
-	/* AT&T lex sometimes puts back the EOF ! */
-	if(ch == 0)
-		return;	/* ignore, can't put back EOF */
-	if (offset) {	/* back up in current arg */
-		offset--;
-		return;
-	}
+// /* simple unput only backs up, doesn't allow you to */
+// /* put back different text */
+// void
+// unput(int ch)
+// {
+	// /* AT&T lex sometimes puts back the EOF ! */
+	// if(ch == 0)
+		// return;	/* ignore, can't put back EOF */
+	// if (offset) {	/* back up in current arg */
+		// offset--;
+		// return;
+	// }
 
-	targv--;	/* back to previous arg */
-	offset = strlen(*targv);
-}
+	// targv--;	/* back to previous arg */
+	// offset = strlen(*targv);
+// }

@@ -24,9 +24,32 @@ int comments, code, whiteSpace;
 
 .			; /* ignore everything else */
 %%
-main()
+// main()
+// {
+	// yylex();
+	// printf("code: %d, comments %d, white space %d\n",
+		// code, comments, whiteSpace);
+// }
+
+//显示字符数量，注释数量，空格数量
+int main(int argc, char **argv) 
 {
+	if(argc < 2)
+	{
+		printf("==== show filename's linenum =====\n");
+		printf("usage:app.exe filename\n");
+		return -1;
+	}
+	yyin = fopen(argv[1], "r");
+	if(yyin == NULL)
+	{
+		printf("open fail:%s\n", argv[1]);
+		return -1;
+	}
 	yylex();
 	printf("code: %d, comments %d, white space %d\n",
-		code, comments, whiteSpace);
+		code, comments, whiteSpace);	
+	fclose(yyin);
 }
+
+

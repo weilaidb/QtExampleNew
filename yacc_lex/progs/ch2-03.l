@@ -22,7 +22,7 @@ eol  \n
 
 char **fileList;
 unsigned currentFile = 0;
-unsigned nFiles;
+unsigned nFiles ;
 unsigned long totalCC = 0;
 unsigned long totalWC = 0;
 unsigned long totalLC = 0;
@@ -31,12 +31,12 @@ main(argc,argv)
 int argc;
 char **argv;
 {
-        FILE *file;
+	FILE *file;
 
-        fileList = argv+1;
-        nFiles = argc-1;
+	fileList = argv+1;
+	nFiles = argc-1;
 
-        if (argc == 2) {
+	if (argc == 2) {
 		/*
 		 * we handle the single file case differently from
 		 * the multiple file case since we don't need to
@@ -49,16 +49,18 @@ char **argv;
 			exit(1);
 		}
 		yyin = file;
-        }
-        if (argc > 2)
+	}
+	if (argc > 2)
+	{
 		yywrap();	/* open first file */
-
+	}
 	yylex();
-        /*
-         * once again, we handle zero or one file
-	 * differently from multiple files.
-         */
-        if (argc > 2) {
+
+	/*
+	 * once again, we handle zero or one file
+ * differently from multiple files.
+	 */
+	if (argc > 2) {
 		printf("%8lu %8lu %8lu %s\n", lineCount, wordCount,
 			charCount, fileList[currentFile-1]);
 		totalCC += charCount;
@@ -75,7 +77,7 @@ char **argv;
  * the lexer calls yywrap to handle EOF conditions (e.g., to
  * connect to a new file, as we do in this case.)
  */
-
+//最后一行total无法输出，待解决。
 yywrap()
 {
 	FILE *file;
