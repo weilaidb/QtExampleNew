@@ -1,13 +1,7 @@
-%{
-int yywrap(void); 
-%}
 %%
-%%
-int yywrap(void) 
-{ 
- return 1; 
-} 
+.|\n	ECHO;
 
+%%
 
 int main(int argc, char **argv) 
 {
@@ -18,6 +12,11 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	yyin = fopen(argv[1], "r");
+	if(yyin == NULL)
+	{
+		printf("open fail:%s\n", argv[1]);
+		return -1;
+	}
 	yylex();
 	fclose(yyin);
 }
